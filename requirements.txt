@@ -4,5 +4,7 @@
 
 azure-functions
 azure-storage-blob
+azure-identity
+azure-storage-file-datalake
 pyodbc
 python-docx

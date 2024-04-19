@@ -1,7 +1,9 @@
 import logging
 import azure.functions as func
 import os
+from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
+from azure.storage.filedatalake import DataLakeServiceClient
 from docx import Document
 
 app = func.FunctionApp()
@@ -29,7 +31,8 @@ def GetMessage(req: func.HttpRequest) -> func.HttpResponse:
 
 
 def SaveFile(filename: str):
-    blob_service_client = BlobServiceClient.from_connection_string(os.environ["AzureWebJobsStorage"])
+    managedIdentityCredential = DefaultAzureCredential()
+    blob_service_client = BlobServiceClient(account_url=os.environ["BlobStorageUrl"], credential=managedIdentityCredential)
     container_client = blob_service_client.get_container_client("output")
     blob_client = container_client.get_blob_client(f"{filename}.docx")
     with open(f"{filename}.docx", "rb") as data:
