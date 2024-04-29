@@ -6,5 +6,7 @@ azure-functions
 azure-storage-blob
 azure-identity
 azure-storage-file-datalake
+arcgis
+pandas
 pyodbc
 python-docx
