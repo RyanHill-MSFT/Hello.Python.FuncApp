@@ -29,7 +29,6 @@ def GetMessage(req: func.HttpRequest) -> func.HttpResponse:
     
     return func.HttpResponse(f"File {filename}.docx created successfully.", status_code=200)
 
-
 def SaveFile(filename: str):
     managedIdentityCredential = DefaultAzureCredential()
     blob_service_client = BlobServiceClient(account_url=os.environ["BlobStorageUrl"], credential=managedIdentityCredential)
