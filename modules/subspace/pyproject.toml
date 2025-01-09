@@ -1,14 +1,9 @@
-[build-system]
-requires = [
-    "setuptools", 
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "subspace"
 version = "0.1.0"
 description = "A Python project for subspace communication"
-authors = [
-    { name = "Ryan Hill", url = "https://github.com/RyanHill-MSFT/Hello.Python.FuncApp" }
-]
+authors = [{ name = "Ryan Hill" }]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
