@@ -1,17 +1,14 @@
 import logging
 import azure.functions as func
-import os
-from azure.storage.blob import BlobServiceClient
-from docx import Document
 
 app = func.FunctionApp()
 
-@app.route(route="GetMessage", auth_level=func.AuthLevel.ANONYMOUS)
+@app.route(auth_level=func.AuthLevel.ANONYMOUS)
 def GetMessage(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     try:
-        name = req.params.get('name')
+        name = req.params.get('name') or req.get_json().get('name')
         if not name:
             return func.HttpResponse("Pass 'name' as a query string parameter.", status_code=400)
                         
