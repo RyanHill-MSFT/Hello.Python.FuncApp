@@ -1,0 +1,22 @@
+GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage?name=AzureFunctions
+
+###
+
+GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+Content-Type: application/json
+
+{
+    "name": "Functions on Azure"
+}
+
+###
+
+GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+
+###
+GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+Content-Type: application/json
+
+{
+    "name": ""
+}

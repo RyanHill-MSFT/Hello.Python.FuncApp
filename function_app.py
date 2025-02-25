@@ -10,6 +10,7 @@ def GetMessage(req: func.HttpRequest) -> func.HttpResponse:
     try:
         name = req.params.get('name') or req.get_json().get('name')
         if not name:
+            logging.warning("No name provided.")
             return func.HttpResponse("Pass 'name' as a query string parameter.", status_code=400)
                         
     except Exception as e:
