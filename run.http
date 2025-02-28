@@ -1,8 +1,7 @@
-GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage?name=AzureFunctions
+GET {{host}}/getmessage?name=AzureFunctions
 
 ###
-
-GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+GET {{{host}}}/getmessage
 Content-Type: application/json
 
 {
@@ -10,11 +9,10 @@ Content-Type: application/json
 }
 
 ###
-
-GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+GET {{host}}/api/getmessage
 
 ###
-GET https://hellopythonfuncapp.azurewebsites.net/api/getmessage
+GET {{host}}/getmessage
 Content-Type: application/json
 
 {
